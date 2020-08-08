@@ -294,16 +294,16 @@ data = game_hash
       if name_l == nil || stats[:player_name].length > name_l
       name_l = stats[:player_name].length
       player_n = stats[:player_name]
-      end
+          end
       if stats[:steals] > steals
       steals = stats[:steals]
       player_s = stats[:player_name]
-      end
+        end
       end
      end
     if player_n == player_s
       player_s
-    end
+  end
 end
 
 puts long_name_steals_a_ton
