@@ -126,4 +126,145 @@ def game_hash
   }
 end
 
-# Write code here
+require 'pry'
+
+def num_points_scored (player)
+  data = game_hash
+  points = nil
+  data.each do |key, val|
+  val[:players].each do |stats|
+      if player == stats[:player_name]
+       points = stats[:points]
+      end
+     end
+    end
+  points
+end
+
+
+def shoe_size (player)
+  data = game_hash
+  shoe = nil
+  data.each do |key, val|
+  val[:players].each do |stats|
+      if player == stats[:player_name]
+       shoe = stats[:shoe]
+      end
+     end
+    end
+  shoe
+end
+
+
+
+def team_colors (team)
+  data = game_hash
+  team_c = nil
+  data.each do |key, val|
+    if val[:team_name] == team
+    team_c = val[:colors]
+     end
+    end
+  team_c
+end
+
+
+
+def team_names
+  data = game_hash
+  team_n = []
+  data.each do |key, val|
+    team_n << val[:team_name]
+  end
+  team_n
+end
+
+
+
+def player_numbers(team)
+  data = game_hash
+  numbers = []
+  data.each do |key, val|
+    if team == val[:team_name]
+      val[:players].each do |stats|
+    numbers << stats[:number]
+     end 
+    end
+  end
+  numbers
+end
+
+def player_stats (player)
+  data = game_hash
+  p_stats = {}
+  data.each do |key,val|
+  val[:players].each do |stats|
+    if stats[:player_name] == player
+      p_stats = stats
+      end
+     end
+    end
+    p_stats
+  end
+  
+  
+  def big_shoe_rebounds
+  data = game_hash
+  big = nil
+  re = nil
+  data.each do |key,val|
+  val[:players].each do |stats|
+    if big == nil || stats[:shoe] > big
+      big = stats[:shoe]
+      re = stats[:rebounds]
+      end
+     end
+    end
+    re
+  end
+
+  
+def most_points_scored
+data = game_hash
+  points = nil
+  player = nil
+  data.each do |key,val|
+  val[:players].each do |stats| 
+      if points == nil || stats[:points] > points
+      points = stats[:points]
+      player = stats[:player_name]
+      end
+     end
+    end
+    player
+end
+
+puts most_points_scored
+
+def winning_team
+  data = game_hash
+  h_points = 0
+  a_points = 0
+  team = nil
+  data.each do |key,val|
+    val[:players].each do |stats|
+      if key == :home
+    h_points = stats[:points] + h_points
+  else
+    a_points = stats[:points] + a_points
+    end
+    if h_points > a_points
+     team = data[:home][:team_name]
+     else
+       team = data[:away][:team_name]
+    end
+    end
+    end
+    team
+end 
+
+puts winning_team
+
+
+
+
