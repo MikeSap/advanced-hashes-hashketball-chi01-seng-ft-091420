@@ -267,11 +267,12 @@ puts winning_team
 
 def player_with_the_longest_name
 data = game_hash
-  points = nil
+  name_l = nil
   player = nil
   data.each do |key,val|
   val[:players].each do |stats| 
-      if points == nil || stats[:points] > points
+    binding.pry
+      if name_l == nil || stats[:player_name.length] > points
       points = stats[:points]
       player = stats[:player_name]
       end
