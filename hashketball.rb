@@ -301,8 +301,7 @@ data = game_hash
         end
       end
      end
-    if player_n == player_s
-      player_s
+    player_n == player_s
   end
 end
 
