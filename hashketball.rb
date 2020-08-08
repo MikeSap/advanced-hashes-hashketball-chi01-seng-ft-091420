@@ -270,8 +270,7 @@ data = game_hash
   name_l = nil
   player = nil
   data.each do |key,val|
-  val[:players].each do |stats| 
-    binding.pry
+  val[:players].each do |stats|
       if name_l == nil || stats[:player_name].length > name_l
       name_l = stats[:player_name].length
       player = stats[:player_name]
