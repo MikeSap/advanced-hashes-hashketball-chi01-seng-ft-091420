@@ -294,6 +294,10 @@ data = game_hash
       name_l = stats[:player_name].length
       player = stats[:player_name]
       end
+      if stats[:steals] > steals
+      name_l = stats[:player_name].length
+      player = stats[:player_name]
+      end
       binding.pry
      end
     end
