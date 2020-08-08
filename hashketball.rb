@@ -286,17 +286,18 @@ puts player_with_the_longest_name
 def long_name_steals_a_ton
 data = game_hash
   name_l = nil
-  player = nil
+  player_n = nil
+  player_s = nil
   steals = 0
   data.each do |key,val|
   val[:players].each do |stats|
       if name_l == nil || stats[:player_name].length > name_l
       name_l = stats[:player_name].length
-      player = stats[:player_name]
+      player_n = stats[:player_name]
       end
       if stats[:steals] > steals
       name_l = stats[:player_name].length
-      player = stats[:player_name]
+      player_s = stats[:player_name]
       end
       binding.pry
      end
