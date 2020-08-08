@@ -272,8 +272,8 @@ data = game_hash
   data.each do |key,val|
   val[:players].each do |stats| 
     binding.pry
-      if name_l == nil || stats[:player_name.length] > points
-      points = stats[:points]
+      if name_l == nil || stats[:player_name].length > name_l
+      name_l = stats[:player_name].length
       player = stats[:player_name]
       end
      end
