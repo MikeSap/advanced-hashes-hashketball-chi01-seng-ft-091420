@@ -283,3 +283,22 @@ end
 puts player_with_the_longest_name
 
 
+def player_with_the_longest_name
+data = game_hash
+  name_l = nil
+  player = nil
+  data.each do |key,val|
+  val[:players].each do |stats|
+      if name_l == nil || stats[:player_name].length > name_l
+      name_l = stats[:player_name].length
+      player = stats[:player_name]
+      end
+     end
+    end
+    player
+end
+
+puts player_with_the_longest_name
+
+
+
