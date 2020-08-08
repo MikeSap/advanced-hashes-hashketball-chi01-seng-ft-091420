@@ -302,7 +302,6 @@ data = game_hash
       end
      end
     player_n == player_s
-  end
 end
 
 puts long_name_steals_a_ton
